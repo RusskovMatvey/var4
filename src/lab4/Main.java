@@ -1,5 +1,7 @@
 package lab4;
 
+import lab5.GUI;
+
 import java.util.ArrayList;
 
 public class Main {
@@ -11,6 +13,7 @@ public class Main {
 
                 if (numberOfStudents > 0 & numberOfTeachers > 0) {
                     System.out.println("Количество преподавателей: " + numberOfTeachers + " Количество студентов: " + numberOfStudents);
+                    GUI.textArea.append("Количество преподавателей: " + numberOfTeachers + " Количество студентов: " + numberOfStudents + "\n");
 
                     ArrayList<Student> arrayOfFlow2 = new ArrayList<>();
 
@@ -32,12 +35,15 @@ public class Main {
 
                 } else {
                     System.out.println("Введите положительное число");
+                    GUI.textArea.append("Введите положительное число" + "\n");
                 }
             } catch (IllegalArgumentException e) {
                 System.out.println("Введите число.");
+                GUI.textArea.append("Введите число." + "\n");
             }
         } else {
             System.out.println("Неверное кол-во аргументов (Возможен только один аргумент)");
+            GUI.textArea.append("Неверное кол-во аргументов (Возможен только один аргумент)" + "\n");
         }
     }
 }

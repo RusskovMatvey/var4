@@ -1,5 +1,7 @@
 package lab3;
 
+import lab5.GUI;
+
 public class Main {
     public static void main(String[] args) {
         if (args.length == 1) {
@@ -8,6 +10,7 @@ public class Main {
                 if (count > 0) {
                     System.out.println("Количество повторений: " + count);
                     System.out.println("");
+                    GUI.textArea.append("Количество повторений: " + count + "\n" + "\n");
 
                     Object monitor = new Object();
 
@@ -25,12 +28,15 @@ public class Main {
                     }
                 } else {
                     System.out.println("Введите положительное число!");
+                    GUI.textArea.append("Введите положительное число!" + "\n");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Введите число, а не строку!");
+                GUI.textArea.append("Введите число!" + "\n");
             }
         } else {
             System.out.println("Некорректное количество параметров!");
+            GUI.textArea.append("Некорректное количество параметров!" + "\n");
         }
     }
 }

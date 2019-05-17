@@ -1,5 +1,7 @@
 package lab3;
 
+import lab5.GUI;
+
 public class ThreadOne implements Runnable {
     private int count;
     private final Object monitor;
@@ -16,6 +18,7 @@ public class ThreadOne implements Runnable {
             synchronized (monitor) {
                 task.increaseByTen();
                 System.out.println(Thread.currentThread().getName() + " number " + task.getNumber());
+                GUI.textArea.append(Thread.currentThread().getName() + " number " + task.getNumber() + "\n");
                 monitor.notify();
                 try {
                     if (i < count) {

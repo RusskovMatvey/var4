@@ -1,5 +1,7 @@
 package lab4;
 
+import lab5.GUI;
+
 public class Student extends Thread {
     private final int number;
 
@@ -13,8 +15,8 @@ public class Student extends Thread {
         synchronized (this) {
 
             System.out.println(getName() + " " + number);
+            GUI.textArea.append(getName() + " " + number + "\n");
             Task.decrementStudents();
-            //GUI.textArea.append(Thread.currentThread().getName() + " " + number + " count: " + task.getCount() + "\n");
 
             this.notify();
 

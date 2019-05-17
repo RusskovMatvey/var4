@@ -1,5 +1,7 @@
 package lab3;
 
+import lab5.GUI;
+
 public class ThreadTwo extends Thread {
     private int count;
     private final Object monitor;
@@ -18,6 +20,7 @@ public class ThreadTwo extends Thread {
             synchronized (monitor) {
                 task.increaseByThousand();
                 System.out.println(Thread.currentThread().getName() + " number " + task .getNumber());
+                GUI.textArea.append(Thread.currentThread().getName() + " number " + task .getNumber() + "\n");
                 monitor.notify();
                 try {
                     if (i < count) {

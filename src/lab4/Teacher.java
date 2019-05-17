@@ -1,5 +1,7 @@
 package lab4;
 
+import lab5.GUI;
+
 public class Teacher extends Thread {
     private Object wait;
     private final int number;
@@ -29,8 +31,8 @@ public class Teacher extends Thread {
                     if (Task.getNumberOfStudents() > 0) {
 
                         System.out.print(Thread.currentThread().getName() + " " + number + " ");
+                        GUI.textArea.append(Thread.currentThread().getName() + " " + number + " ");
                         Task.invateStudent();
-                        //GUI.textArea.append(Thread.currentThread().getName() + " " + number + " count: " + task.getCount() + "\n");
 
                         this.notify();
                     } else {
